@@ -19,8 +19,16 @@ const App: React.FC = () => {
 
 const AppWrapper = styled.div`
   display: grid;
-  grid-template-rows: repeat(4, 25vh);
+  grid-template-rows: 50px repeat(3, 25vh);
+  grid-template-columns: 1fr;
   
+  *,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
 `;
 
 export default App;

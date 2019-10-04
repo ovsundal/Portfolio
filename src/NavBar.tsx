@@ -4,7 +4,7 @@ import styled from "styled-components";
 export const NavBar: React.FC = () => {
     return (
         <NavBarWrapper>
-            <Logo>Logo</Logo>
+            <Logo>OS</Logo>
 
             <Gutter />
 
@@ -26,18 +26,22 @@ const navbarItems =
 const NavBarWrapper = styled.nav`
     display: grid;
     grid-template-columns: 
-    [Logo-start] min-content
+    [Logo-start] 5%
     [Logo-end Logo-gutter-start] 15%
     [Logo-gutter-end Panes-start] 40%
     [Panes-end] 1fr
     ;
     
-    background-color: #8bfffd;
+    background-color: #176862;
 `;
 
 const Logo = styled.span`
   grid-column: Logo-start / Logo-end;
-  
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  color: white;
+  font-size: 2rem;
 `;
 
 const Gutter = styled.span`
@@ -47,6 +51,8 @@ grid-column: Logo-gutter-start / Logo-gutter-end;
 const NavItemList = styled.ul`
       list-style-type: none;
       display: flex;
+      align-items: center;
+      justify-content: space-evenly;
 `;
 
 const NavItemElement = styled.li`

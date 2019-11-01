@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import {ProjectCard} from "./components/ProjectCard";
 
 interface IProject {
     title: string,
@@ -29,9 +30,12 @@ export const ProjectSection: React.FC = () => {
     return (
         <ProjectSectionWrapper>
             <ProjectList>
-                {projectList.map((project) =>
+                {projectList.map(({description, title}) =>
                     <li>
-                        {Project(project)}
+                        <ProjectCard
+                            title={title}
+                            description={description}
+                        />
                     </li>
                 )
                 }
@@ -40,19 +44,8 @@ export const ProjectSection: React.FC = () => {
     );
 };
 
-function Project(project: IProject) {
-    const {title, description} = project;
-
-    return (
-        <ProjectWrapper>
-            <h1>{title}</h1>
-            <p>{description}</p>
-        </ProjectWrapper>
-    )
-}
-
 const ProjectSectionWrapper = styled.section`
-    background-color: #ff7851;
+    background-color: whitesmoke;
     grid-column: 1 / 5;
 `;
 
@@ -61,8 +54,4 @@ const ProjectList = styled.ul`
   display: flex;
   justify-content: space-evenly;
   align-items: center;
-`;
-
-const ProjectWrapper = styled.div`
-
 `;

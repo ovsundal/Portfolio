@@ -1,34 +1,33 @@
 import React from 'react';
-import './App.css';
-import styled from "styled-components";
+import styled, {createGlobalStyle} from "styled-components";
 import {NavBar} from "./NavBar";
 import {AboutSection} from "./About";
 import {ProjectSection} from "./ProjectSection";
 import {ContactSection} from "./ContactSection";
 
 const App: React.FC = () => {
-  return (
-    <AppWrapper>
-        <NavBar />
-        <AboutSection />
-        <ProjectSection />
-        <ContactSection />
-    </AppWrapper>
-  );
+    return (
+        <AppWrapper>
+            <GlobalStyle />
+            <NavBar />
+            <AboutSection />
+            <ProjectSection />
+            <ContactSection />
+        </AppWrapper>
+    );
 };
 
 const AppWrapper = styled.div`
   display: grid;
-  grid-template-rows: 5rem 25rem repeat(2, 25vh);
+  grid-template-rows: 7vh 40vh 50vh 25vh;
   grid-template-columns: 1fr;
-  
-  *,
-*::before,
-*::after {
-  margin: 0;
-  padding: 0;
-  box-sizing: inherit;
-}
+`;
+
+const GlobalStyle = createGlobalStyle`
+* {
+    margin: 0;
+    padding: 0;
+} 
 `;
 
 export default App;

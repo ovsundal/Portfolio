@@ -19,7 +19,7 @@ const App: React.FC = () => {
 
 const AppWrapper = styled.div`
   display: grid;
-  grid-template-rows: 7vh 40vh 50vh 25vh;
+  grid-template-rows: 7vh 40vh 80vh 25vh;
   grid-template-columns: 1fr;
 `;
 
